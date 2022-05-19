@@ -1,5 +1,7 @@
 let infoPassenger = document.getElementById("info-passenger")
 
+let error = document.getElementById("error")
+
 let eta = parseInt(prompt("quanti anni hai ?"));
 
 let kilometri = parseInt(prompt("Quanti kilometri vuoi percorrere?"));
@@ -10,7 +12,7 @@ let costoBiglietto = (prezzoKilometro * kilometri).toFixed(2);
 
 
 if ((isNaN(eta) || isNaN(kilometri)) || (eta < 1 || kilometri < 1)) {
-    alert("età o kilometri non validi")
+    error.innerHTML = "Età o kilometri non validi, ricaricare la pagina per riprovare"
 }else if ((eta > 1) && (kilometri > 1 && kilometri < 100)) {
     if (eta < 18) {
         let sconto20 = (costoBiglietto * 20) / 100;
@@ -27,5 +29,5 @@ if ((isNaN(eta) || isNaN(kilometri)) || (eta < 1 || kilometri < 1)) {
                                 <li>prezzo biglietto : ${costoBiglietto}</li>
                             </ul>`
 }else if (kilometri >= 100) {
-    alert("kilometri non validi (max km 99)")
+    error.innerHTML = "kilometri non validi (max km: 99), ricaricare la pagina per riprovare"
 }

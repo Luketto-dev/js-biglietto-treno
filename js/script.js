@@ -1,7 +1,7 @@
 let infoPassenger = document.getElementById("info-passenger")
-const eta = prompt("quanti anni hai ?");
-const kilometri = prompt("Quanti kilometri vuoi percorrere?");
-const prezzoKilometro = 0.21;
+let eta = prompt("quanti anni hai ?");
+let kilometri = prompt("Quanti kilometri vuoi percorrere?");
+let prezzoKilometro = 0.21;
 
 let costoBiglietto = (prezzoKilometro * kilometri).toFixed(2);
 
